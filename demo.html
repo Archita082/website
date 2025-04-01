@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Section Layout with Image Slider</title>
+    <style>
+        body {
+            margin: 50;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: url(images/2.jpg);
+            
+        }
+
+        header {
+            background: rgba(152, 251, 152, 0.7); /* Semi-transparent green for header */
+            color: #333;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .topic {
+            background: rgba(127, 255, 0, 0.8); /* Semi-transparent lime green */
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+
+        nav {
+            background: rgba(144, 238, 144, 0.8); /* Semi-transparent pastel green for navigation */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 1rem;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #333;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #76c7b7; /* Soft mint color on hover */
+            transform: translateX(5px);
+        }
+
+        footer {
+            background: rgba(152, 251, 152, 0.7); /* Semi-transparent green for footer */
+            color: #333;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #4e9f6a; /* Light green color on hover */
+        }
+
+        /* Image Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slider-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Responsiveness for small screens */
+        @media (max-width: 768px) {
+            .slider-container {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="topic">
+        <h2>Welcome to Our Nature-Themed Website</h2>
+        <p>Explore the beauty of nature and contact us for more details.</p>
+    </div>
+
+    <header>
+        <h1>Homepage</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Image Slider Section -->
+    <div class="slider-container">
+        <div class="slider-images">
+            <img src="https://via.placeholder.com/900x400?text=Image+1" >
+            <img src="https://via.placeholder.com/900x400?text=Image+2" >
+            <img src="https://via.placeholder.com/900x400?text=Image+3" >
+            <img src="https://via.placeholder.com/900x400?text=Image+4" >
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <footer>
+        <p><a href="#">About Us</a></p>
+    </footer>
+
+    <script>
+        // JavaScript for the image slider
+        let currentSlide = 0;
+        const images = document.querySelectorAll('.slider-images img');
+        const totalSlides = images.length;
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        // Function to change the slide
+        function changeSlide() {
+            if (currentSlide >= totalSlides) {
+                currentSlide = totalSlides - 1; // Prevent from going out of bounds
+            } else if (currentSlide < 0) {
+                currentSlide = 0; // Prevent from going below 0
+            }
+
+            const slideWidth = images[0].clientWidth; // Get the width of one image
+            document.querySelector('.slider-images').style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+        }
+
+        // Event listeners for the navigation buttons
+        nextButton.addEventListener('click', () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+            }
+            changeSlide();
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+            }
+            changeSlide();
+        });
+
+        // Automatically change slides every 5 seconds
+        setInterval(() => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+            } else {
+                currentSlide = 0; // Reset to the first image
+            }
+            changeSlide();
+        }, 5000); // Change slide every 5 seconds
+
+        // Initialize the first slide
+        changeSlide();
+    </script>
+
+</body>
+</html>
