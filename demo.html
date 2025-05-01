@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andhra Pradesh Tourist Guide</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header select, header button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    color: #333;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main ul li {
+    margin: 10px 0;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Explore Andhra Pradesh</h1>
+    <select id="stateDropdown">
+        <option value="">Select a Category</option>
+        <option value="beaches">Beaches</option>
+        <option value="forests">Forests</option>
+        <option value="rivers">Rivers</option>
+        <option value="mountains">Mountains</option>
+    </select>
+    <button id="searchBtn">Search</button>
+    <button id="backBtn">Back</button>
+</header>
+
+<main id="stateInfo">
+    <!-- Dynamic content will be loaded here -->
+</main>
+
+
+<script>
+    const stateData = {
+    beaches: {
+        name: 'Beaches of Andhra Pradesh',
+        content: `
+            <h2>Top Beaches</h2>
+            <ul>
+                <li><strong>Rishikonda Beach</strong>: Known for its golden sands and water sports.</li>
+                <li><strong>Yarada Beach</strong>: A serene beach surrounded by hills.</li>
+                <li><strong>Rama Krishna Beach</strong>: Famous for the Submarine Museum.</li>
+                <li><strong>Mypadu Beach</strong>: A quiet beach ideal for relaxation.</li>
+                <li><strong>Surya Lanka Beach</strong>: Popular for dolphin sightings and beach camping.</li>
+            </ul>
+            <img src="images/beach1.jpg" alt="Beach View">
+            <p>Andhra Pradesh boasts a coastline with pristine beaches perfect for relaxation and water activities.</p>
+        `
+    },
+    forests: {
+        name: 'Forests of Andhra Pradesh',
+        content: `
+            <h2>Notable Forests</h2>
+            <ul>
+                <li><strong>Seshachalam Hills</strong>: Known for its rich biodiversity.</li>
+                <li><strong>Paderu Forest</strong>: A haven for nature enthusiasts.</li>
+                <li><strong>Kolleru Lake Wildlife Sanctuary</strong>: A hotspot for birdwatching.</li>
+            </ul>
+            <img src="images/forest1.jpg" alt="Forest View">
+            <p>The forests of Andhra Pradesh are home to diverse flora and fauna, offering a glimpse into the state's natural beauty.</p>
+        `
+    },
+    rivers: {
+        name: 'Rivers of Andhra Pradesh',
+        content: `
+            <h2>Major Rivers</h2>
+            <ul>
+                <li><strong>Krishna River</strong>: One of the longest rivers in India.</li>
+                <li><strong>Godavari River</strong>: Known as the 'Dakshina Ganga'.</li>
+            </ul>
+            <img src="images/river1.jpg" alt="River View">
+            <p>The rivers of Andhra Pradesh are vital for agriculture and have cultural significance in the region.</p>
+        `
+    },
+    mountains: {
+        name: 'Mountains of Andhra Pradesh',
+        content: `
+            <h2>Mountain Ranges</h2>
+            <ul>
+                <li><strong>Eastern Ghats</strong>: A series of mountain ranges along the eastern coast.</li>
+                <li><strong>Nallamala Hills</strong>: Known for its dense forests and wildlife.</li>
+            </ul>
+            <img src="images/mountain1.jpg" alt="Mountain View">
+            <p>The mountains of Andhra Pradesh offer scenic landscapes and are rich in biodiversity.</p>
+        `
+    }
+};
+
+document.getElementById('searchBtn').addEventListener('click', function () {
+    const selectedCategory = document.getElementById('stateDropdown').value;
+    const stateInfoDiv = document.getElementById('stateInfo');
+
+    if (selectedCategory && stateData[selectedCategory]) {
+        const state = stateData[selectedCategory];
+        stateInfoDiv.innerHTML = `
+            <h2>${state.name}</h2>
+            ${state.content}
+        `;
+    } else {
+        stateInfoDiv.innerHTML = '<p>Please select a valid category.</p>';
+    }
+});
+
+document.getElementById('backBtn').addEventListener('click', function () {
+    document.getElementById('stateDropdown').value = '';
+    document.getElementById('stateInfo').innerHTML = '';
+});
+
+</script>
+
+
+</body>
+</html>
+
+
