@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>State Info</title>
+    <title>Region Info</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,7 +51,8 @@
             margin-top: 20px;
         }
 
-        .search-btn, .back-btn {
+        .search-btn,
+        .back-btn {
             padding: 10px 20px;
             font-size: 16px;
             background-color: #2980b9;
@@ -60,7 +62,8 @@
             cursor: pointer;
         }
 
-        .search-btn:hover, .back-btn:hover {
+        .search-btn:hover,
+        .back-btn:hover {
             background-color: #3498db;
         }
 
@@ -102,84 +105,128 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Select a State to View Information</h1>
-</header>
+    <header>
+        <h1>Select Your Location</h1>
+    </header>
 
-<div class="content">
-    <select id="stateDropdown">
-        <option value="">Select a State</option>
-        <option value="california">California</option>
-        <option value="texas">Texas</option>
-        <option value="florida">Florida</option>
-    </select>
+    <div class="content">
+        <select id="stateDropdown">
+            <option value="">----Select A State----</option>
+            <option value="andhra_pradesh">Andhra Pradesh</option>
+            <option value="bihar">Bihar</option>
+            <option value="kerala">Kerala</option>
+            <option value="maharashtra">Maharashtra</option>
+            <option value="tamil_nadu">Tamil Nadu</option>
+            <!-- Add more states here -->
+        </select>
 
-    <div id="stateInfo" class="info-box"></div>
+        <div id="stateInfo" class="info-box"></div>
 
-    <div class="button-container">
-        <button id="searchBtn" class="search-btn">Search</button>
-        <button id="backBtn" class="back-btn">Back</button>
+        <div class="button-container">
+            <button id="searchBtn" class="search-btn">Search</button>
+            <button id="backBtn" class="back-btn">Back</button>
+        </div>
     </div>
-</div>
 
-<!-- Footer with working link back to homepage -->
-<footer>
-    <a href="home.html">
-        <button>Back to Website</button>
-    </a>
-</footer>
+    <footer>
+        <a href="home.html">
+            <button>Back to Website</button>
+        </a>
+    </footer>
 
-<script>
-    const stateData = {
-        california: {
-            name: 'California',
-            population: '39.5 million',
-            capital: 'Sacramento',
-            famousFor: 'Beaches, Tech Industry, Hollywood, Wine Country',
-            history: 'California was the site of the Gold Rush in the mid-1800s, and it became a state in 1850.'
-        },
-        texas: {
-            name: 'Texas',
-            population: '29 million',
-            capital: 'Austin',
-            famousFor: 'BBQ, Oil Industry, Cowboys, Music Festivals',
-            history: 'Texas was an independent republic before joining the United States in 1845.'
-        },
-        florida: {
-            name: 'Florida',
-            population: '21 million',
-            capital: 'Tallahassee',
-            famousFor: 'Disney World, Beaches, Warm Climate, Everglades',
-            history: 'Florida was the first state to be visited by Europeans and became a state in 1845.'
-        }
-    };
+    <script>
+        const stateData = {
+            andhra_pradesh: {
+                name: 'Andhra Pradesh',
+                htmlSection: 'beaches.html',
+                forests: 'Seshachalam Hills, Paderu Forest, Kolleru Lake Wildlife Sanctuary',
+                rivers: 'Krishna River, Godavari River',
+                mountains: 'Eastern Ghats, Nallamala Hills',
+                villages: 'Ponduru Village, Peddagudi, Gandepalli',
+                temples: 'Tirumala Venkateswara Temple, Kanaka Durga Temple, Sri Kalahasti Temple'
+            },
+            bihar: {
+                name: 'Bihar',
+                htmlSection: '',
+                forests: 'Valmiki National Park',
+                rivers: 'Ganga, Kosi, Gandak, Son',
+                mountains: 'Rajgir Hills',
+                villages: 'Vaishali, Nalanda, Maner',
+                temples: 'Mahabodhi Temple, Vishnupad Temple'
+            },
+            kerala: {
+                name: 'Kerala',
+                htmlSection: '',
+                forests: 'Silent Valley, Periyar Wildlife Sanctuary',
+                rivers: 'Periyar, Bharathapuzha, Pamba',
+                mountains: 'Western Ghats, Agasthyakoodam',
+                villages: 'Kumarakom, Mararikulam, Aranmula',
+                temples: 'Sabarimala Temple, Padmanabhaswamy Temple'
+            },
+            maharashtra: {
+                name: 'Maharashtra',
+                htmlSection: '',
+                forests: 'Tadoba National Park, Sanjay Gandhi National Park',
+                rivers: 'Godavari, Krishna, Tapi',
+                mountains: 'Western Ghats, Satpura Range',
+                villages: 'Shani Shingnapur, Pochampally, Walvanda',
+                temples: 'Shirdi Sai Baba Temple, Siddhivinayak Temple'
+            },
+            tamil_nadu: {
+                name: 'Tamil Nadu',
+                htmlSection: '',
+                forests: 'Mudumalai, Sathyamangalam, Anamalai Tiger Reserve',
+                rivers: 'Cauvery, Vaigai, Palar',
+                mountains: 'Nilgiris, Eastern Ghats',
+                villages: 'Chettinad, Kumbakonam, Auroville',
+                temples: 'Meenakshi Temple, Brihadeeswarar Temple, Rameswaram Temple'
+            }
+        };
 
-    document.getElementById('searchBtn').addEventListener('click', function () {
-        const selectedState = document.getElementById('stateDropdown').value;
-
-        if (selectedState) {
-            const state = stateData[selectedState];
+        document.getElementById('searchBtn').addEventListener('click', function () {
+            const selectedState = document.getElementById('stateDropdown').value;
             const stateInfoDiv = document.getElementById('stateInfo');
 
-            stateInfoDiv.innerHTML = `
-                <h2>Information about ${state.name}</h2>
-                <p><strong>Population:</strong> ${state.population}</p>
-                <p><strong>Capital:</strong> ${state.capital}</p>
-                <p><strong>Famous For:</strong> ${state.famousFor}</p>
-                <p><strong>History:</strong> ${state.history}</p>
-            `;
-        } else {
-            document.getElementById('stateInfo').innerHTML = '<p>Please select a state to view information.</p>';
-        }
-    });
+            if (selectedState && stateData[selectedState]) {
+                const state = stateData[selectedState];
 
-    document.getElementById('backBtn').addEventListener('click', function () {
-        document.getElementById('stateDropdown').value = '';
-        document.getElementById('stateInfo').innerHTML = '';
-    });
-</script>
+                if (state.htmlSection) {
+                    fetch(state.htmlSection)
+                        .then(response => response.text())
+                        .then(htmlContent => {
+                            renderStateInfo(state, htmlContent);
+                        })
+                        .catch(error => {
+                            console.error("Error loading HTML content:", error);
+                            renderStateInfo(state, '');
+                        });
+                } else {
+                    renderStateInfo(state, '');
+                }
+            }
+        });
+
+        function renderStateInfo(state, htmlContent) {
+            document.getElementById('stateInfo').innerHTML = `
+                <h2>${state.name}</h2>
+                <div>${htmlContent}</div>
+                <p><strong>Forests:</strong> ${state.forests}</p>
+                <p><strong>Rivers:</strong> ${state.rivers}</p>
+                <p><strong>Mountains:</strong> ${state.mountains}</p>
+                <p><strong>Villages:</strong> ${state.villages}</p>
+                <p><strong>Temples:</strong> ${state.temples}</p>
+            `;
+        }
+
+        document.getElementById('backBtn').addEventListener('click', function () {
+            document.getElementById('stateDropdown').value = '';
+            document.getElementById('stateInfo').innerHTML = '';
+        });
+    </script>
 
 </body>
+
 </html>
