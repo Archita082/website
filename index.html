@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    
+        h1 {
+            color: #333;
+        }
+    
+        p {
+            font-size: 18px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Select a State</h1>
+    
+    <!-- Form to select a state -->
+    <form id="stateForm">
+        <label for="state">Choose a state:</label>
+        <select id="state" name="state">
+            <option value="">--Select a State--</option>
+            <option value="california">California</option>
+            <option value="texas">Texas</option>
+            <option value="florida">Florida</option>
+            <option value="newyork">New York</option>
+            <option value="washington">Washington</option>
+            <!-- Add more states as needed -->
+        </select>
+        
+        <button type="button" onclick="goToStatePage()">Search</button>
+    </form>
+
+    <script>
+        // Function to redirect the user based on their state selection
+        function goToStatePage() {
+            const state = document.getElementById('state').value;
+
+            if (state) {
+                // Redirect to a page specific to the selected state
+                window.location.href = state + '.html';
+            } else {
+                alert('Please select a state!');
+            }
+        }
+    </script>
+</body>
+</html>
