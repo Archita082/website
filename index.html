@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+    
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    
+        h1 {
+            color: #333;
+        }
+    
+        p {
+            font-size: 18px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Select Your Location</h1>
+    
+    
+    <form id="stateForm">
+        <label for="state">Select A State :</label>
+        <select id="state" name="state">
+           
+            <option value="assam">Assam</option>
+            <option value="himachalpradesh">Himachal Pradesh</option>
+            <option value="kerala">Kerala</option>
+            <option value="meghalaya">Meghalaya</option>
+            <option value="nagaland">Nagaland</option>
+            <option value="andamanandnicobarislands">Andaman and Nicobar Islands</option>      
+        </select>
+        
+        <button type="button" onclick="goToStatePage()">Search</button>
+    </form>
+
+    <script>
+        // Function to redirect the user based on their state selection
+        function goToStatePage() {
+            const state = document.getElementById('state').value;
+
+            if (state) {
+                // Redirect to a page specific to the selected state
+                window.location.href = state + '.html';
+            } else {
+                alert('Please select a state!');
+            }
+        }
+    </script>
+</body>
+</html>
