@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State Selector</title>
+  <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 10;
+      padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url(images/2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: black;
+      text-align: center;
+    
+    }
+
+    form {
+      background-color: #516d685e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      color: black;
+    }
+
+    select {
+      width: 250px;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #010a0a;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color:black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #17363b8c;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Select Your Location</h1>
+
+    <form id="stateForm">
+      <label for="state">Select A State :</label><br>
+      <select id="state" name="state">
+        <option value="assam">Assam</option>
+        <option value="himachalpradesh">Himachal Pradesh</option>
+        <option value="kerala">Kerala</option>
+        <option value="meghalaya">Meghalaya</option>
+        <option value="nagaland">Nagaland</option>
+        <option value="andamanandnicobarislands">Andaman and Nicobar Islands</option>
+      </select><br>
+
+      <button type="button" onclick="goToStatePage()">Search</button>
+    </form>
+  </div>
+
+  <script>
+    function goToStatePage() {
+      const state = document.getElementById('state').value;
+
+      if (state) {
+        window.location.href = state + '.html';
+      } else {
+        alert('Please select a state!');
+      }
+    }
+  </script>
+</body>
+</html>
