@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(133, 177, 173);
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .beach {
+           background: #ffffff;
+           border-left: 5px solid #00b3b3;
+           padding: 15px;
+           margin: 15px 0;
+           border-radius: 6px;
+           box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+        .section {
+            
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            
+            
+            margin: 0;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .section-details {
+            padding: 15px;
+            display: none;
+            background-color: #f9f9f9;
+        }
+
+        .section h2:hover {
+        
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Explore The Follwing....</h1>
+        <p>Click On Any Section To Learn More!</p>
+    </header>
+
+    <div class="beach">
+        <!-- Section 1 -->
+        <div class="section">
+            <h2 onclick="toggleDetails(0)">🌴Beautiful Beaches
+</h2>
+            <div class="section-details">  
+                <h2><span class="emoji">🌊</span>Varkala Beach</h2>
+<details>
+    <summary>
+        view
+    </summary>
+    <p><strong>Why it's beautiful:</strong> Dramatic red cliffs overlooking the Arabian Sea, golden sands, natural springs, and a spiritual vibe.</p>
+  <p><strong>Unique for:</strong> A blend of spirituality (Janardanaswamy Temple nearby), yoga retreats, and stunning sunsets.</p>
+   
+</details>
+  
+                </div>
+            </div>
+        <div class="section">
+                <h2 onclick="toggleDetails(1)">🌿Villages</h2>
+                <div class="section-details">
+                    
+                  
+                    </div>
+                </div>
+        <div class="section">
+                    <h2 onclick="toggleDetails(2)">🐟Rivers & Lacks</h2>
+                    <div class="section-details">
+                      
+                        </div>
+                    </div>
+        <div class="section">
+                        <h2 onclick="toggleDetails(3)">🌳🦁Forests and Wildlife </h2>
+                        <div class="section-details">
+                          
+                            </div>
+                        </div>
+        <div class="section">
+                            <h2 onclick="toggleDetails(4)">⛰️Mountains</h2>
+                            <div class="section-details">
+                              
+                                </div>
+                            </div>
+        <div class="section">
+                                <h2 onclick="toggleDetails(5)">🌤️🍁Sky Views & Autumn Season</h2>
+                                <div class="section-details">
+                                  
+                                    </div>
+                                </div>
+
+            <script>
+                // Toggle the visibility of section details when clicked
+                function toggleDetails(index) {
+                    var details = document.querySelectorAll('.section-details');
+                    if (details[index].style.display === 'block') {
+                        details[index].style.display = 'none';
+                    } else {
+                        details[index].style.display = 'block';
+                    }
+                }
+            </script>
+
+</body>
+
+</html>
