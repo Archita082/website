@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/1.png);
+    
+    background-size: cover;
+    background-position: center center;
+    
+}
+.animated-welcome {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 2s ease-out forwards;
+}
+
+/* Define the keyframes for animation */
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animated-explore {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 2s ease-out 0.5s forwards; /* starts after 0.5s delay */
+}
+
+/* Reuse the keyframes already defined */
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animated-alluring {
+    opacity: 0;
+    transform: scale(0.8);
+    color: #666; /* starting color (grayish) */
+    animation: zoomInColor 1.5s ease-out 1s forwards;
+}
+
+@keyframes zoomInColor {
+    to {
+        opacity: 1;
+        transform: scale(1);
+        color: #000; /* final color - black */
+    }
+}
+
+.topic {
+    text-align: center;
+    padding: 20px;
+    background: rgba(73, 105, 97, 0.582);
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.topic h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+}
+.topic p {
+    font-size: 1.2rem;
+    margin: 10px;
+
+}
+header {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 20px;
+    background: rgba(55, 71, 55, 0.39) ;
+    
+    margin-top: 20px;
+    border-radius: 8px;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    
+    position: fixed;
+    border-radius: 2px;
+
+}
+nav a {
+    color: black;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+nav a:hover {
+    
+    transform: translateX(5px);
+}
+footer {
+    background: rgba(66, 92, 66, 0.432);
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    border-radius: 8px;
+
+}
+footer a {
+    color: black ;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: rgba(2, 33, 43, 0.452);
+}
