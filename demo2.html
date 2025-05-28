@@ -1,895 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Beautiful Beaches of Kerala</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blue Nature Login</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* Background Image with Soft Blue Overlay */
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f8f9;
-      color: #333;
-      margin: 20px;
-      padding: 20px;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); /* You can replace with a more "blue" photo */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
     }
-    h1 {
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(173, 216, 230, 0.4); /* Light blue overlay */
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 64, 128, 0.2);
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .login-container h2 {
       text-align: center;
-      color: #007B7F;
+      margin-bottom: 25px;
+      color: #003366;
     }
-    .beach {
-      background: #ffffff;
-      border-left: 5px solid #00b3b3;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .emoji {
-      font-size: 24px;
-      margin-right: 10px;
-    }
-    h2 {
-      color: #005b5b;
-    }
-  </style>
-</head>
-<body>
 
-<h1>🌴 Beautiful Beaches in Kerala 🌴</h1>
-
-<div class="beach">
-  <h2><span class="emoji">🌊</span>Varkala Beach</h2>
-  <p><strong>Why it's beautiful:</strong> Dramatic red cliffs overlooking the Arabian Sea, golden sands, natural springs, and a spiritual vibe.</p>
-  <p><strong>Unique for:</strong> A blend of spirituality (Janardanaswamy Temple nearby), yoga retreats, and stunning sunsets.</p>
-</div>
-
-<div class="beach">
-  <h2><span class="emoji">🌊</span>Kovalam Beach</h2>
-  <p><strong>Why it's beautiful:</strong> Crescent-shaped shoreline with three adjacent beaches, calm waters, and vibrant beach life.</p>
-  <p><strong>Unique for:</strong> Lively atmosphere, Ayurvedic resorts, and lighthouse views.</p>
-</div>
-
-<div class="beach">
-  <h2><span class="emoji">🌊</span>Marari Beach (Mararikulam)</h2>
-  <p><strong>Why it's beautiful:</strong> A pristine, less-crowded beach with coconut palms and soft white sand.</p>
-  <p><strong>Unique for:</strong> Tranquility, eco-friendly resorts, and a true local village vibe.</p>
-</div>
-
-<div class="beach">
-  <h2><span class="emoji">🌊</span>Bekal Beach</h2>
-  <p><strong>Why it's beautiful:</strong> Wide, clean beach with the majestic Bekal Fort facing the sea.</p>
-  <p><strong>Unique for:</strong> Great photo spots, fort history, and peaceful environment.</p>
-</div>
-
-<div class="beach">
-  <h2><span class="emoji">🌊</span>Cherai Beach</h2>
-  <p><strong>Why it's beautiful:</strong> Where the backwaters meet the sea; golden sand and calm waters.</p>
-  <p><strong>Unique for:</strong> Dolphin sightings, close to Kochi, and family-friendly.</p>
-</div>
-
-<div class="beach">
-  <h2><span class="emoji">🌊</span>Muzhappilangad Beach</h2>
-  <p><strong>Why it's beautiful:</strong> Kerala’s only drive-in beach with a 4 km stretch of sand for driving along the shore.</p>
-  <p><strong>Unique for:</strong> Perfect for beach drives, photography, and a serene sunset view.</p>
-</div>
-
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beautiful Villages of Kerala</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f8ff;
-      color: #333;
-      margin: 20px;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2c6b5d;
-    }
-    .village {
-      background-color: #ffffff;
-      padding: 20px;
-      margin: 15px 0;
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1px solid #90caf9;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      background-color: #e3f2fd;
     }
-    h2 {
-      color: #00796b;
+
+    .login-container input:focus {
+      border-color: #42a5f5;
+      outline: none;
     }
-    ul {
-      list-style-type: none;
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #42a5f5;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
-    .emoji {
-      font-size: 24px;
-      margin-right: 10px;
+
+    .login-container button:hover {
+      background-color: #1e88e5;
+    }
+
+    .login-container .links {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .login-container .links a {
+      color: #0d47a1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .login-container .links a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(-50%);
+      }
     }
   </style>
 </head>
 <body>
 
-<h1>🌿 Beautiful Villages of Kerala</h1>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>1. Wayanad</h2>
-  <p><strong>Why it's the most beautiful:</strong> Wayanad is a stunning hill station in the Western Ghats, known for its lush forests, waterfalls, and tea plantations. The serenity of its landscapes, combined with the charm of the local villages, makes it one of the most picturesque regions in Kerala.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>Edakkal Caves with ancient carvings.</li>
-    <li>Soochipara Waterfalls and Chembra Peak.</li>
-    <li>Wayanad Wildlife Sanctuary, a haven for nature lovers.</li>
-  </ul>
-</div>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>2. Kumarakom</h2>
-  <p><strong>Why it's the most beautiful:</strong> Located on the banks of Vembanad Lake, Kumarakom is famous for its backwaters, houseboats, and bird sanctuary. The tranquil waters, lush greenery, and the peaceful environment make this village a true beauty.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>Kumarakom Bird Sanctuary, perfect for birdwatching.</li>
-    <li>Boat rides through Vembanad Lake.</li>
-    <li>Picturesque surroundings with traditional Kerala-style houses.</li>
-  </ul>
-</div>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>3. Athirappilly</h2>
-  <p><strong>Why it's the most beautiful:</strong> Known as the "Niagara of India," Athirappilly boasts the largest waterfall in Kerala, set against a lush forest backdrop. This village offers a perfect combination of nature, peace, and beauty.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>Athirappilly Waterfalls and Vazhachal Waterfalls.</li>
-    <li>Rich tropical vegetation and wildlife.</li>
-    <li>Beautiful, unspoiled natural surroundings.</li>
-  </ul>
-</div>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>4. Munnar</h2>
-  <p><strong>Why it's the most beautiful:</strong> Munnar, with its expansive tea plantations, mist-covered hills, and cool weather, is one of Kerala's most popular hill stations. The charming village life in Munnar adds to its natural charm.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>Eravikulam National Park and Mattupetty Dam.</li>
-    <li>Lush green tea estates and valleys.</li>
-    <li>Pleasant climate throughout the year.</li>
-  </ul>
-</div>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>5. Kuttanadu</h2>
-  <p><strong>Why it's the most beautiful:</strong> Often referred to as the "Venice of the East," Kuttanadu is a unique village in Alappuzha, known for its backwaters, rice paddies, and traditional Kerala village lifestyle. The tranquil backwater cruises are unforgettable.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>The low-lying paddy fields below sea level.</li>
-    <li>Traditional houseboats and backwater cruises.</li>
-    <li>Calm, picturesque landscapes with a rural charm.</li>
-  </ul>
-</div>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>6. Parunthumpara</h2>
-  <p><strong>Why it's the most beautiful:</strong> Known as the "Eagle Rock," Parunthumpara is a hidden gem in the Idukki district, offering panoramic views of tea estates, valleys, and rolling hills. The landscape is lush and tranquil, perfect for nature lovers.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>Scenic tea estates and cool weather.</li>
-    <li>A peaceful, less-touristy village.</li>
-    <li>Stunning panoramic views from the top of Eagle Rock.</li>
-  </ul>
-</div>
-
-<div class="village">
-  <h2><span class="emoji">🌿</span>7. Vypin Island</h2>
-  <p><strong>Why it's the most beautiful:</strong> Located near Kochi, Vypin Island is a serene destination with beautiful beaches, coconut groves, and fishing villages. It's perfect for those seeking a mix of coastal beauty and quiet village life.</p>
-  <p><strong>Unique Features:</strong></p>
-  <ul>
-    <li>Chinakkathoor Pooram festival and ancient Pallipuram Fort.</li>
-    <li>Picturesque Cherai Beach and Munambam Beach.</li>
-    <li>Peaceful atmosphere and local coastal village life.</li>
-  </ul>
-</div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kerala's Beautiful Lakes and Rivers</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        h2 {
-            color: #2e8b57;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        ul li {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        p {
-            line-height: 1.6;
-            font-size: 16px;
-        }
-        hr {
-            border: 0;
-            border-top: 2px solid #e1e1e1;
-            margin: 20px 0;
-        }
-        strong {
-            color: #1a5e2a;
-        }
-        .emoji {
-            font-size: 1.5em;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>1. Vembanad Lake</strong></h2>
-        <p><strong>Location</strong>: Alappuzha, Kottayam, and Vaikom districts.</p>
-        <p><strong>Why it's elegant</strong>: <strong>Vembanad Lake</strong> is Kerala's largest lake and a stunning place where you can experience the serene beauty of the backwaters. This vast lake is known for its <strong>houseboats</strong>, <strong>water lilies</strong>, and tranquil waters.</p>
-        <ul>
-            <li>🐢 <strong>Houseboat cruises</strong> through the backwaters, offering an unforgettable experience.</li>
-            <li>Beautiful <strong>Kumarakom Bird Sanctuary</strong> located on the lake’s shores.</li>
-            <li>The lake is surrounded by lush greenery, traditional villages, and coconut palms.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>2. Periyar River</strong></h2>
-        <p><strong>Location</strong>: Originates from the Western Ghats and flows through the <strong>Thekkady</strong> region.</p>
-        <p><strong>Why it's elegant</strong>: The <strong>Periyar River</strong> is one of Kerala’s most significant rivers, known for its stunning location amidst <strong>Periyar Wildlife Sanctuary</strong>. The river is not just a natural beauty but also a sanctuary for a wide range of wildlife.</p>
-        <ul>
-            <li>🐢 <strong>Periyar Lake</strong> within the sanctuary, perfect for boat rides.</li>
-            <li>Rich wildlife sightings including <strong>elephants, tigers</strong>, and a variety of bird species.</li>
-            <li>The river is known for its crystal-clear water and surrounding mountains, making it an ideal place for nature lovers.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>3. Punnappra-Vayalar Backwaters</strong></h2>
-        <p><strong>Location</strong>: Alappuzha district.</p>
-        <p><strong>Why it's elegant</strong>: The backwaters around <strong>Punnappra</strong> and <strong>Vayalar</strong> are a blend of tranquil waters and lush landscapes. This area is relatively less commercialized compared to other backwaters like <strong>Kumarakom</strong>, making it an excellent destination for those seeking solitude and scenic beauty.</p>
-        <ul>
-            <li>🐢 Peaceful <strong>houseboat cruises</strong> through narrow canals and lakes.</li>
-            <li>Surrounded by vast paddy fields and coconut groves.</li>
-            <li>Local life remains traditional, with fishermen casting their nets and birds flying above the water.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>4. Ashtamudi Lake</strong></h2>
-        <p><strong>Location</strong>: Kollam district.</p>
-        <p><strong>Why it's elegant</strong>: <strong>Ashtamudi Lake</strong> is known for its <strong>unique octagonal shape</strong> and is one of the most scenic lakes in Kerala. The lake's waters are calm and perfect for exploring by boat. The surrounding areas are peaceful, and the backdrop of lush landscapes adds to its elegance.</p>
-        <ul>
-            <li>Known as the <strong>"Gateway to the Backwaters."</strong></li>
-            <li>Popular for <strong>houseboat cruises</strong> and fishing.</li>
-            <li>The lake is surrounded by beautiful wetlands, home to diverse flora and fauna.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>5. Thekkady Lake (Periyar Wildlife Sanctuary)</strong></h2>
-        <p><strong>Location</strong>: Thekkady, Idukki district.</p>
-        <p><strong>Why it's elegant</strong>: <strong>Thekkady Lake</strong> is located within the <strong>Periyar Wildlife Sanctuary</strong>. The scenic beauty of the lake, nestled between dense forests and hills, makes it one of the most picturesque locations in Kerala. It's ideal for those seeking a mix of nature and wildlife.</p>
-        <ul>
-            <li>🐢 <strong>Boat rides</strong> on the lake offer opportunities to spot <strong>wildlife</strong> like elephants, wild boar, and various bird species.</li>
-            <li>Surrounded by dense forests and hills, perfect for nature walks and trekking.</li>
-            <li>The lake offers a peaceful atmosphere, away from the hustle of city life.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>6. Neelumperoor River</strong></h2>
-        <p><strong>Location</strong>: Near <strong>Kottayam</strong> district.</p>
-        <p><strong>Why it's elegant</strong>: The <strong>Neelumperoor River</strong> is a lesser-known but beautiful river flowing through the heart of rural Kerala. The river is surrounded by lush plantations, paddy fields, and traditional village homes.</p>
-        <ul>
-            <li>Tranquil water ideal for <strong>kayaking</strong> and <strong>canoeing</strong>.</li>
-            <li>The surrounding village life offers a glimpse of <strong>traditional Kerala</strong>.</li>
-            <li>Peaceful river banks dotted with <strong>coconut trees</strong> and birds.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>7. Chalakudy River</strong></h2>
-        <p><strong>Location</strong>: Thrissur district.</p>
-        <p><strong>Why it's elegant</strong>: The <strong>Chalakudy River</strong> flows through a stunning forest region and is known for its serene environment. The river is famous for the <strong>Athirappilly Waterfalls</strong>, making it one of the most picturesque rivers in Kerala.</p>
-        <ul>
-            <li>Known for the <strong>Athirappilly Waterfalls</strong>, also called the "Niagara of India."</li>
-            <li>The river passes through the <strong>Parambikulam Tiger Reserve</strong>, providing an excellent opportunity to spot wildlife.</li>
-            <li>The lush greenery and rocky riverbanks make it a perfect destination for nature photography.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>8. Iruvanji River</strong></h2>
-        <p><strong>Location</strong>: <strong>Wayanad</strong> district.</p>
-        <p><strong>Why it's elegant</strong>: Flowing through the stunning hills and forests of Wayanad, the <strong>Iruvanji River</strong> is a serene and relatively less commercialized river. It provides a quiet escape for nature lovers who enjoy the peace of rural Kerala.</p>
-        <ul>
-            <li>The river offers a cool, misty atmosphere, making it perfect for peaceful walks.</li>
-            <li>It's a popular spot for <strong>fishing</strong> and local boat rides.</li>
-            <li>Surrounded by <strong>forests</strong>, hills, and tea estates, it’s a great place to explore.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>9. Vypin Island Backwaters</strong></h2>
-        <p><strong>Location</strong>: Kochi district.</p>
-        <p><strong>Why it's elegant</strong>: The backwaters of <strong>Vypin Island</strong> are an excellent place to experience Kerala’s serene water culture. This region is perfect for those who want to explore the <strong>coastal beauty</strong> of Kerala without the crowds.</p>
-        <ul>
-            <li>Scenic <strong>backwater cruises</strong> along narrow waterways.</li>
-            <li>Close to <strong>Cherai Beach</strong>, providing a mix of coastal and backwater beauty.</li>
-            <li>Peaceful surroundings with traditional coastal villages.</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="section">
-        <h2><span class="emoji">🐟</span><strong>10. Muvattupuzha River</strong></h2>
-        <p><strong>Location</strong>: Ernakulam district.</p>
-        <p><strong>Why it's elegant</strong>: The <strong>Muvattupuzha River</strong> is one of the most important rivers in the central part of Kerala. It is famous for its calmness, the beauty of its rural surroundings, and its significance for the local community.</p>
-        <ul>
-            <li>Known for <strong>fishing</strong> and peaceful riverside activities.</li>
-            <li>The river is surrounded by scenic <strong>greenery</strong>, <strong>paddy fields</strong>, and <strong>villages</strong>.</li>
-            <li>Perfect for nature walks along the riverbanks.</li>
-        </ul>
-    </div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kerala's Beautiful Forests and Wildlife</title>
-  <style>
-    body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  color: #2c3e50;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.forest-section {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.forest-section h2 {
-  color: #27ae60;
-  font-size: 1.8em;
-  margin-bottom: 10px;
-}
-
-.forest-section p {
-  color: #7f8c8d;
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
-.forest-section ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.forest-section ul li {
-  margin-bottom: 10px;
-  color: #34495e;
-  font-size: 1.1em;
-}
-
-.forest-section ul li strong {
-  color: #2980b9;
-}
-
-ul li:before {
-  content: "🌿";
-  margin-right: 10px;
-}
-
-  </style>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <div class="container">
-    <h1>Kerala's Beautiful Forests and Wildlife 🌳🦁</h1>
-    
-    <div class="forest-section">
-      <h2>1. Periyar Wildlife Sanctuary 🌿🦁</h2>
-      <p><strong>Location:</strong> Thekkady, Idukki District</p>
-      <p><strong>Why it's special:</strong> Periyar is one of the most popular wildlife sanctuaries in Kerala. The sanctuary is nestled amidst the Western Ghats and is home to elephants, tigers, bison, and various species of birds.</p>
-      <ul>
-        <li><strong>Periyar Lake:</strong> A serene boat ride through the lake offers the chance to spot wild animals 🦓.</li>
-        <li><strong>Elephants:</strong> One of the main attractions here is the wild elephants 🐘 that roam freely in the forest.</li>
-        <li><strong>Flora & Fauna:</strong> The sanctuary is rich in flora 🌸, including tropical evergreen trees, bamboo, and medicinal plants 🌿.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>2. Silent Valley National Park 🌱🦜</h2>
-      <p><strong>Location:</strong> Palakkad District</p>
-      <p><strong>Why it's special:</strong> Silent Valley is a pristine stretch of untouched tropical rainforest, home to a wide range of wildlife, including the endangered lion-tailed macaque 🦧.</p>
-      <ul>
-        <li><strong>Flora:</strong> The park features dense rainforests 🌳 with over 1,000 plant species 🌸.</li>
-        <li><strong>Wildlife:</strong> The lion-tailed macaque 🦧 is a prominent attraction, along with elephants 🐘, tigers 🦁, and a variety of birds 🦅 and butterflies 🦋.</li>
-        <li><strong>Ecotourism:</strong> A perfect place for ecotourism 🌿, allowing visitors to experience a truly untouched forest ecosystem.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>3. Wayanad Wildlife Sanctuary 🏞️🐘</h2>
-      <p><strong>Location:</strong> Wayanad District</p>
-      <p><strong>Why it's special:</strong> This sanctuary is located at the junction of Kerala and Karnataka. It's known for its scenic beauty, including lush forests 🌳, waterfalls 🌊, and serene landscapes.</p>
-      <ul>
-        <li><strong>Wildlife:</strong> The sanctuary is home to elephants 🐘, tigers 🦁, leopards 🐆, and various species of birds 🦉.</li>
-        <li><strong>Edakkal Caves:</strong> These caves contain ancient rock carvings 🏞️ dating back to the Neolithic era.</li>
-        <li><strong>Soochipara Waterfalls:</strong> A beautiful three-tiered waterfall 🌊 located within the sanctuary.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>4. Parambikulam Tiger Reserve 🦁🌲</h2>
-      <p><strong>Location:</strong> Idukki District</p>
-      <p><strong>Why it's special:</strong> Situated on the borders of Kerala and Tamil Nadu, the Parambikulam Tiger Reserve is one of the best-preserved natural habitats for tigers 🐅 and other wildlife species.</p>
-      <ul>
-        <li><strong>Wildlife:</strong> Apart from tigers 🦁, the reserve is home to elephants 🐘, leopards 🐆, and various species of birds 🦅.</li>
-        <li><strong>River:</strong> The Parambikulam River 🐟 runs through the reserve, adding to its beauty.</li>
-        <li><strong>Boating:</strong> Visitors can enjoy a boat ride 🚤 on the river to explore the surroundings and watch wildlife.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>5. Nanda Devi and Valley of Flowers National Park 🌼🦄</h2>
-      <p><strong>Location:</strong> Idukki District (bordering Tamil Nadu)</p>
-      <p><strong>Why it's special:</strong> Known for its breathtaking landscapes, this national park is renowned for its biodiversity 🌸, including rare flowers 🌼 and medicinal plants 🌿.</p>
-      <ul>
-        <li><strong>Flora:</strong> The park has diverse plant species 🌸, including rhododendrons 🌷 and other high-altitude flora.</li>
-        <li><strong>Wildlife:</strong> The park is home to a variety of animal species 🦁, including the endangered Nilgiri Tahr 🦏 and other mountain wildlife 🦌.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>6. Agasthyakoodam and Agasthyakumar Wildlife Sanctuaries 🌲🐒</h2>
-      <p><strong>Location:</strong> Idukki and Pathanamthitta Districts</p>
-      <p><strong>Why it's special:</strong> These two sanctuaries are located around the Agasthyakoodam peak 🏞️, the second-highest peak in Kerala. The forests here are rich in medicinal plants 🌿 and home to endemic species.</p>
-      <ul>
-        <li><strong>Agasthyakoodam Peak:</strong> A popular destination for trekking 🥾 and nature walks 🚶.</li>
-        <li><strong>Wildlife:</strong> Elephants 🐘, Nilgiri langurs 🦧, and numerous species of birds 🦅 are commonly seen.</li>
-        <li><strong>Flora:</strong> The area is known for its unique plant species 🌿, some of which are medicinal 🌸.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>7. Idukki Wildlife Sanctuary 🦋🌿</h2>
-      <p><strong>Location:</strong> Idukki District</p>
-      <p><strong>Why it's special:</strong> The Idukki Wildlife Sanctuary is located around the Idukki Reservoir 🌊, and it’s a wonderful place for nature lovers to explore.</p>
-      <ul>
-        <li><strong>Idukki Dam:</strong> One of the oldest and most beautiful dams 🏞️ in Kerala.</li>
-        <li><strong>Wildlife:</strong> Leopards 🐆, elephants 🐘, tigers 🦁, and a variety of birds 🦉.</li>
-        <li><strong>Trekking:</strong> The sanctuary has numerous trekking trails 🥾 for nature enthusiasts.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>8. Parunthumpara Forests 🦉🌳</h2>
-      <p><strong>Location:</strong> Idukki District</p>
-      <p><strong>Why it's special:</strong> Known as the “Eagle Rock,” this forest offers a tranquil escape surrounded by mist-covered hills 🌄 and tea plantations 🍃.</p>
-      <ul>
-        <li><strong>Panoramic Views:</strong> Spectacular views of valleys 🏞️ and forests 🌲.</li>
-        <li><strong>Trekking and Hiking:</strong> There are trails for those looking to explore the forest on foot 🥾.</li>
-        <li><strong>Flora:</strong> Rich in endemic species of flora 🌸 and fauna 🦄.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>9. Chilapata Forests 🌳🐅</h2>
-      <p><strong>Location:</strong> Kozhikode District</p>
-      <p><strong>Why it's special:</strong> Chilapata is a dense forest 🌲 located in Kerala’s northern region, known for its secluded nature and wildlife diversity 🦁.</p>
-      <ul>
-        <li><strong>Wildlife:</strong> A haven for elephants 🐘 and other wildlife 🦁.</li>
-        <li><strong>Birdwatching:</strong> Ideal for bird enthusiasts 🦜 looking to spot rare species 🦅.</li>
-      </ul>
-    </div>
-
-    <div class="forest-section">
-      <h2>10. Shendurney Wildlife Sanctuary 🦓🌸</h2>
-      <p><strong>Location:</strong> Kollam District</p>
-      <p><strong>Why it's special:</strong> Part of the Agasthyamala Biosphere Reserve 🌍, this sanctuary is famous for its rich flora 🌿 and fauna 🦁, including the endangered lion-tailed macaque 🦧 and various species of butterflies 🦋.</p>
-      <ul>
-        <li><strong>Shendurney Reservoir:</strong> A major water body 🌊 in the sanctuary.</li>
-        <li><strong>Wildlife:</strong> Includes elephants 🐘, tigers 🦁, and endemic species 🦏.</li>
-        <li><strong>Ecotourism:</strong> A haven for nature lovers and photographers 📸.</li>
-      </ul>
-    </div>
+  <div class="login-container">
+    <h2>Welcome</h2>
+    <form>
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <div class="links">
+        <a href="#">Forgot Password?</a> |
+        <a href="#">Sign Up</a>
+      </div>
+    </form>
   </div>
 
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kerala's Beautiful Mountains</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    section {
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #4CAF50;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-
-    .mountain {
-      background-color: white;
-      margin: 15px 0;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .mountain p {
-      font-size: 1.1em;
-    }
-
-    .mountain ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .mountain ul li {
-      font-size: 1em;
-      margin: 5px 0;
-    }
-
-    .mountain ul li::before {
-      content: "🌄 ";
-      font-size: 1.5em;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Kerala's Beautiful Mountains</h1>
-  </header>
-
-  <section>
-    <div class="mountain">
-      <h2>Anamudi Mountain ⛰️🌿</h2>
-      <p><strong>Location:</strong> Idukki District, Western Ghats</p>
-      <p><strong>Height:</strong> 2,695 meters (8,842 feet)</p>
-      <p><strong>Why it's special:</strong> Anamudi is the highest peak in South India, located in Eravikulam National Park. It offers stunning views and is home to rich biodiversity.</p>
-      <ul>
-        <li>Trekking: Popular trekking destination</li>
-        <li>Wildlife: Home to the Nilgiri Tahr 🦏</li>
-        <li>Scenic Views: Breathtaking views of valleys and tea plantations</li>
-      </ul>
-    </div>
-
-    <div class="mountain">
-      <h2>Agasthyakoodam 🌲🏞️</h2>
-      <p><strong>Location:</strong> Idukki District, Western Ghats</p>
-      <p><strong>Height:</strong> 1,868 meters (6,129 feet)</p>
-      <p><strong>Why it's special:</strong> Agasthyakoodam is part of the Agasthyamala Biosphere Reserve and is known for its rich biodiversity and medicinal plants.</p>
-      <ul>
-        <li>Biodiversity: Home to rare species like Nilgiri Tahr 🦏</li>
-        <li>Trekking: A favorite spot for nature enthusiasts</li>
-        <li>Herbal Flora: Known for medicinal plants 🌸</li>
-      </ul>
-    </div>
-
-    <div class="mountain">
-      <h2>Meesapulimala 🏔️🌿</h2>
-      <p><strong>Location:</strong> Idukki District</p>
-      <p><strong>Height:</strong> 2,640 meters (8,661 feet)</p>
-      <p><strong>Why it's special:</strong> Meesapulimala is surrounded by tea plantations and rich green forests, offering a serene trekking experience.</p>
-      <ul>
-        <li>Trekking: Popular among adventure enthusiasts</li>
-        <li>Flora & Fauna: Home to Nilgiri Tahr 🦏</li>
-        <li>Viewpoints: Stunning views from the summit</li>
-      </ul>
-    </div>
-
-    <div class="mountain">
-      <h2>Vavul Mala 🏞️🌲</h2>
-      <p><strong>Location:</strong> Wayanad District</p>
-      <p><strong>Height:</strong> 2,338 meters (7,671 feet)</p>
-      <p><strong>Why it's special:</strong> Vavul Mala is a hidden gem in Wayanad with lush forests and breathtaking trekking trails.</p>
-      <ul>
-        <li>Trekking: Challenging trails leading to stunning views</li>
-        <li>Flora: Rich in medicinal plants 🌸</li>
-        <li>Wildlife: Home to elephants 🐘 and tigers 🦁</li>
-      </ul>
-    </div>
-
-    <div class="mountain">
-      <h2>Sabarimala Hills ⛰️🌄</h2>
-      <p><strong>Location:</strong> Pathanamthitta District</p>
-      <p><strong>Height:</strong> 1,068 meters (3,504 feet)</p>
-      <p><strong>Why it's special:</strong> Sabarimala is a famous pilgrimage destination and offers beautiful natural surroundings.</p>
-      <ul>
-        <li>Pilgrimage: The Sabarimala temple is one of the most visited in India</li>
-        <li>Trekking: A scenic and spiritual journey</li>
-        <li>Wildlife: Home to elephants 🐘 and leopards 🐆</li>
-      </ul>
-    </div>
-
-    <div class="mountain">
-      <h2>Chembra Peak 🏔️🌿</h2>
-      <p><strong>Location:</strong> Wayanad District</p>
-      <p><strong>Height:</strong> 2,100 meters (6,890 feet)</p>
-      <p><strong>Why it's special:</strong> Famous for its heart-shaped lake and beautiful trekking trails.</p>
-      <ul>
-        <li>Trekking: A popular trekking destination</li>
-        <li>Heart-shaped Lake: A beautiful landmark 💖</li>
-        <li>Flora & Fauna: Rich in species 🌸 and wildlife 🦏</li>
-      </ul>
-    </div>
-  </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kerala Sky Views & Autumn Season</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      font-size: 2em;
-      color: #4CAF50;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      font-size: 1.1em;
-      margin: 8px 0;
-    }
-
-    ul li::before {
-      content: "🌄 ";
-      font-size: 1.5em;
-    }
-
-    .season-info {
-      background-color: #f0f8ff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .season-info h3 {
-      color: #ff6347;
-      font-size: 1.8em;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Kerala's Sky Views & Autumn Season</h1>
-  </header>
-
-  <section>
-    <h2>Kerala Sky View 🌅🌤️</h2>
-    <p>Kerala offers mesmerizing sky views, whether you’re in the hill stations, beaches, or backwaters. The clear skies and beautiful sunsets make it a great place for sky enthusiasts.</p>
-
-    <div class="season-info">
-      <h3>1. Sky Views from Kerala's Hill Stations</h3>
-      <p>The hill stations of Kerala provide some of the most incredible sky views, especially during sunrise and sunset.</p>
-      <ul>
-        <li><strong>Munnar</strong> - Rolling tea plantations, misty mornings, and dramatic sunsets</li>
-        <li><strong>Wayanad</strong> - Edakkal Caves and Chembra Peak offer panoramic views of the valleys</li>
-        <li><strong>Vagamon</strong> - Known for its stunning views of the surrounding valleys and pristine skies</li>
-      </ul>
-    </div>
-
-    <div class="season-info">
-      <h3>2. Sky Views over Kerala’s Beaches</h3>
-      <p>Kerala’s beaches offer incredible sky views, especially at sunrise and sunset.</p>
-      <ul>
-        <li><strong>Varkala Beach</strong> - Cliffside views offer breathtaking sunsets over the horizon</li>
-        <li><strong>Kovalam Beach</strong> - Clear skies, golden sands, and a relaxing coastal vibe</li>
-      </ul>
-    </div>
-
-    <div class="season-info">
-      <h3>3. Sky Views from Kerala’s Backwaters</h3>
-      <p>The backwaters of Kerala, especially in Alappuzha and Kumarakom, provide stunning sky views reflected in the calm waters.</p>
-      <ul>
-        <li><strong>Alappuzha</strong> - The sky and water mirror each other, creating a surreal atmosphere</li>
-        <li><strong>Kumarakom</strong> - Tranquil houseboat rides offer spectacular views of both sky and water</li>
-      </ul>
-    </div>
-
-    <h2>Kerala's Autumn Season 🍂🍁</h2>
-    <p>Though Kerala doesn’t have the traditional autumn season, the months from October to December bring a mild, pleasant climate, resembling autumn-like conditions.</p>
-
-    <div class="season-info">
-      <h3>1. Kerala’s Climate During the Autumn Period</h3>
-      <p>From October to December, the weather in Kerala becomes cooler and more pleasant, with clear skies and refreshing breezes.</p>
-      <ul>
-        <li>Temperature ranges from 22°C to 32°C</li>
-        <li>Humidity levels drop, offering perfect weather for outdoor activities</li>
-      </ul>
-    </div>
-
-    <div class="season-info">
-      <h3>2. Autumn in Kerala’s Hill Stations</h3>
-      <p>The hill stations like Wayanad, Munnar, and Vagamon offer pleasant weather and clear skies during this time, making it ideal for trekking and sightseeing.</p>
-      <ul>
-        <li><strong>Munnar</strong> - Known for its tea estates and misty mornings</li>
-        <li><strong>Wayanad</strong> - Perfect for a peaceful retreat amidst nature</li>
-        <li><strong>Vagamon</strong> - A serene hill station with lush greenery</li>
-      </ul>
-    </div>
-
-    <div class="season-info">
-      <h3>3. Autumn Along Kerala’s Beaches</h3>
-      <p>Beaches like Varkala and Kovalam offer perfect autumn weather with gentle sea breezes and clear skies, ideal for beach activities and relaxation.</p>
-      <ul>
-        <li><strong>Varkala</strong> - Known for its sunset views over the Arabian Sea</li>
-        <li><strong>Kovalam</strong> - A peaceful beach for relaxation and sunset watching</li>
-      </ul>
-    </div>
-
-    <div class="season-info">
-      <h3>4. Kerala’s Autumn Festivals</h3>
-      <p>Kerala celebrates vibrant festivals like Onam during the autumn months. These festivals bring life to the region with their colors and cultural significance.</p>
-      <ul>
-        <li><strong>Onam</strong> - Celebrated with flowers, feasts, and traditional dances 🌸</li>
-        <li><strong>Pookalam</strong> - Intricate flower carpets are created in homes and public spaces</li>
-      </ul>
-    </div>
-  </section>
-</body>
-</html>
-
-
-
-
-
-   
